@@ -1,0 +1,496 @@
+:root {
+    --parchment:     #f2e8d5;
+    --parchment-dk:  #e8d9bc;
+    --parchment-dkr: #d9c89e;
+    --ink:           #2c1810;
+    --ink-lt:        #5c3d28;
+    --red:           #8b1a1a;
+    --gold:          #b8860b;
+    --gold-lt:       #d4a827;
+    --green:         #2d5a27;
+    --shadow:        rgba(44,24,16,0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a0f08;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, #2a1508 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, #1f0e05 0%, transparent 50%);
+    min-height: 100vh;
+    font-family: 'Crimson Text', Georgia, serif;
+    color: var(--ink);
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+  .page-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--parchment);
+    background-image:
+      radial-gradient(ellipse at 10% 10%, rgba(255,255,255,0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 90%, rgba(180,140,80,0.2) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.06'/%3E%3C/svg%3E");
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 0 8px var(--parchment), 0 0 0 10px var(--gold), 0 20px 60px rgba(0,0,0,0.6);
+    padding: 56px 48px 48px;
+    text-align: center;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before, .cover::after {
+    content: '';
+    position: absolute;
+    border: 1.5px solid var(--gold);
+    opacity: 0.4;
+  }
+  .cover::before { inset: 12px; }
+  .cover::after  { inset: 18px; }
+
+  .cover-ornament {
+    font-family: 'IM Fell English', serif;
+    color: var(--gold);
+    font-size: 28px;
+    letter-spacing: 8px;
+    margin-bottom: 16px;
+    opacity: 0.7;
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 7vw, 72px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 0 rgba(180,140,80,0.2);
+  }
+
+  .cover h1 span {
+    color: var(--red);
+    font-style: italic;
+  }
+
+  .cover-sub {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-lt);
+    margin: 16px 0 28px;
+    letter-spacing: 1px;
+  }
+
+  .cover-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .cover-stat {
+    text-align: center;
+  }
+
+  .cover-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .cover-stat-label {
+    font-family: 'IM Fell English', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-lt);
+    margin-top: 4px;
+  }
+
+  .cover-divider {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 24px auto;
+  }
+
+  /* ── TABS ── */
+  .tabs-wrap {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: -2px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .tab-btn {
+    background: var(--parchment-dkr);
+    border: 2px solid var(--gold);
+    border-bottom: none;
+    padding: 10px 18px 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-lt);
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+    position: relative;
+    top: 2px;
+  }
+
+  .tab-btn:hover {
+    background: var(--parchment-dk);
+    color: var(--ink);
+  }
+
+  .tab-btn.active {
+    background: var(--parchment);
+    color: var(--red);
+    border-bottom: 2px solid var(--parchment);
+    top: 0;
+  }
+
+  /* ── MAIN PANEL ── */
+  .panel {
+    background: var(--parchment);
+    background-image:
+      radial-gradient(ellipse at 5% 5%, rgba(255,255,255,0.5) 0%, transparent 40%),
+      url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.05'/%3E%3C/svg%3E");
+    border: 2px solid var(--gold);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+    padding: 32px;
+    min-height: 500px;
+  }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    text-align: center;
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--parchment-dkr);
+  }
+
+  .section-label {
+    font-family: 'IM Fell English', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  .section-desc {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    color: var(--ink-lt);
+    margin-top: 8px;
+    font-size: 16px;
+  }
+
+  /* ── RECIPE LIST ── */
+  .recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .recipe-card {
+    background: var(--parchment-dk);
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+    border: 1.5px solid var(--parchment-dkr);
+    border-top: 3px solid var(--red);
+    padding: 20px 18px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .recipe-card:hover {
+    background: #ede0c4;
+    border-color: var(--gold);
+    border-top-color: var(--red);
+    box-shadow: 0 4px 16px var(--shadow);
+    transform: translateY(-2px);
+  }
+
+  .recipe-card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .recipe-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .recipe-card-meta {
+    font-family: 'Crimson Text', serif;
+    font-size: 13px;
+    color: var(--ink-lt);
+    font-style: italic;
+  }
+
+  .recipe-card-macros {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .macro-pill {
+    background: var(--parchment);
+    border: 1px solid var(--parchment-dkr);
+    padding: 2px 8px;
+    font-size: 11px;
+    font-family: 'Crimson Text', serif;
+    color: var(--ink-lt);
+    white-space: nowrap;
+  }
+
+  .macro-pill.protein { border-color: var(--red); color: var(--red); }
+
+  /* ── RECIPE DETAIL ── */
+  .recipe-detail { display: none; }
+  .recipe-detail.active { display: block; }
+  .recipe-list-view { display: block; }
+  .recipe-list-view.hidden { display: none; }
+
+  .back-btn {
+    background: none;
+    border: 1.5px solid var(--ink-lt);
+    padding: 6px 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--ink-lt);
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+  }
+
+  .back-btn:hover {
+    border-color: var(--red);
+    color: var(--red);
+  }
+
+  .recipe-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 5vw, 42px);
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .recipe-subtitle {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    color: var(--ink-lt);
+    font-size: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--parchment-dkr);
+  }
+
+  .recipe-body {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 32px;
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: 600px) {
+    .recipe-body { grid-template-columns: 1fr; }
+  }
+
+  .col-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--parchment-dkr);
+  }
+
+  .ingredient-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ingredient-list li {
+    font-size: 15px;
+    color: var(--ink);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .ingredient-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 12px;
+  }
+
+  .ingredient-list li.section-label {
+    padding-left: 0;
+    margin-top: 14px;
+    margin-bottom: 2px;
+    font-family: 'Playfair Display', serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid var(--parchment-dkr);
+    padding-bottom: 4px;
+  }
+
+  .ingredient-list li.section-label::before { display: none; }
+  .ingredient-list li.section-label:first-child { margin-top: 0; }
+
+  .step-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .step-list li {
+    display: flex;
+    gap: 14px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--red);
+    min-width: 24px;
+    line-height: 1.2;
+  }
+
+  /* ── MACRO BAR ── */
+  .macro-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1.5px solid var(--parchment-dkr);
+    margin-bottom: 20px;
+  }
+
+  .macro-item {
+    padding: 14px 12px;
+    text-align: center;
+    border-right: 1px solid var(--parchment-dkr);
+    background: var(--parchment-dk);
+  }
+
+  .macro-item:last-child { border-right: none; }
+
+  .macro-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .macro-lbl {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-lt);
+    margin-top: 4px;
+    font-family: 'Crimson Text', serif;
+  }
+
+  /* ── NOTES BOX ── */
+  .notes-box {
+    background: var(--parchment-dk);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-lt);
+    line-height: 1.6;
+  }
+
+  .notes-box strong {
+    font-style: normal;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ── ORNAMENTS ── */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    font-size: 20px;
+    opacity: 0.5;
+    margin: 8px 0;
+    letter-spacing: 8px;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #1a0f08; }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 0; }
