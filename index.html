@@ -1916,6 +1916,29 @@ const RECIPES = {
     // ── TIER 2 ──
     { type: 'divider', name: 'Tier 2 — Tight', subtitle: '$1-2 per meal — eating real food on almost nothing' },
     {
+      name: "Tuna Taco",
+      subtitle: "1 serving (2-4 tacos) -- ~$1.37",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~320"},{l:"Protein",v:"~28g"},{l:"Fiber",v:"~1g"},{l:"Cost",v:"~$1.37"}],
+      ingredients: [
+        "1 can chunk light tuna in water, drained",
+        "1-2 flour tortillas (~$0.25 each) OR corn tortillas",
+        "1/2 tbsp mustard (~$0.02)",
+        "1/2 tbsp butter or neutral oil (~$0.08)",
+        "Pinch of garlic powder (~$0.02)",
+        "Optional: stripe of mayo on top",
+      ],
+      steps: [
+        "Drain the tuna completely -- no water.",
+        "Add tuna, mustard, butter or oil, and garlic powder to a pan over high heat.",
+        "Cook stirring constantly for about 5 minutes until the mustard is no longer bright yellow and everything is cooked together.",
+        "IF USING CORN TORTILLAS: fry each tortilla in hot oil 5-10 seconds per side to soften and blister.",
+        "IF USING FLOUR TORTILLAS: warm directly over a gas flame 10 seconds per side or in a dry pan.",
+        "Fill tortillas with tuna mixture. One can makes 2-4 tacos depending on tortilla size.",
+      ],
+      notes: "Total cost: ~$1.37. The mustard is the move here -- it binds the tuna, adds tang, and cuts the fishiness. Cook until it's no longer bright yellow, that's when it's done. Corn tortillas fried in hot oil are the better choice if you have oil to spare -- they add crunch and flavor.",
+    },
+    {
       name: "Upgraded Dollar Store Ramen",
       subtitle: "1 serving -- ~$1.50",
       time: "10 min",
@@ -2203,7 +2226,6 @@ function renderGrid(section) {
     }
     return `
     <div class="recipe-card" onclick="showRecipe('${section}', ${i})">
-      <div class="recipe-card-num">— ${r.name.toUpperCase().substring(0,3)} —</div>
       <div class="recipe-card-name">${r.name}</div>
       <div class="recipe-card-meta">${r.subtitle}</div>
       <div class="recipe-card-macros">
