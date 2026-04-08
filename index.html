@@ -515,7 +515,7 @@
     <div class="cover-sub">Batch prep. Fresh builds. High protein. No guesswork.</div>
     <div class="cover-stats">
       <div class="cover-stat">
-        <div class="cover-stat-num">40</div>
+        <div class="cover-stat-num">50</div>
         <div class="cover-stat-label">Recipes</div>
       </div>
       <div class="cover-stat">
@@ -537,6 +537,7 @@
     <button class="tab-btn" onclick="switchTab('breakfast')">Breakfast</button>
     <button class="tab-btn" onclick="switchTab('snacks')">Snacks</button>
     <button class="tab-btn" onclick="switchTab('dessert')">Dessert</button>
+    <button class="tab-btn" onclick="switchTab('struggle')">Struggle Meals</button>
   </div>
 
   <!-- PANEL -->
@@ -618,6 +619,19 @@
         <div class="recipe-grid" id="grid-dessert"></div>
       </div>
       <div class="recipe-detail" id="detail-dessert"></div>
+    </div>
+
+    <!-- STRUGGLE MEALS -->
+    <div class="section" id="tab-struggle">
+      <div class="recipe-list-view" id="list-struggle">
+        <div class="section-header">
+          <div class="section-label">✦ Section Seven ✦</div>
+          <div class="section-title">Struggle Meals</div>
+          <div class="section-desc">Broke but not dead. Under $5. No shame.</div>
+        </div>
+        <div class="recipe-grid" id="grid-struggle"></div>
+      </div>
+      <div class="recipe-detail" id="detail-struggle"></div>
     </div>
 
   </div>
@@ -1672,11 +1686,280 @@ const RECIPES = {
       notes: "Don't overmix — just stir until combined or it gets tough. Pull at 60 seconds and check — every microwave is different. Use a big mug, it rises. Greek yogurt melts slightly into the warm cake like frosting.",
     },
   ],
+  struggle: [
+    {
+      name: "Bean & Rice Bowl",
+      subtitle: "1 serving -- ~$1.50",
+      time: "15 min",
+      macros: [{l:"Calories",v:"~380"},{l:"Protein",v:"~16g"},{l:"Fiber",v:"~12g"},{l:"Cost",v:"~$1.50"}],
+      ingredients: [
+        "1 can black or pinto beans, drained",
+        "1/2 cup dry rice, cooked",
+        "1/2 tsp cumin + 1/2 tsp garlic powder + 1/2 tsp chili powder",
+        "Hot sauce + salt",
+        "Optional: 1 tbsp Greek yogurt or sour cream",
+      ],
+      steps: [
+        "Cook rice per package directions.",
+        "Heat beans in a pan with all spices and a splash of water over medium heat.",
+        "Mash slightly with a fork for better texture -- not fully, just rough.",
+        "Serve beans over rice. Hot sauce on top. Done.",
+      ],
+      notes: "The cheapest complete meal you can make. Mashing some of the beans makes it feel more substantial than just beans over rice. Hot sauce is non-negotiable.",
+    },
+    {
+      name: "Upgraded Dollar Store Ramen",
+      subtitle: "1 serving -- ~$1.50",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~420"},{l:"Protein",v:"~22g"},{l:"Fiber",v:"~2g"},{l:"Cost",v:"~$1.50"}],
+      ingredients: [
+        "1 pack Maruchan or Top Ramen (any flavor)",
+        "2 eggs",
+        "Splash of soy sauce",
+        "Sriracha",
+        "ONLY USE HALF THE FLAVOR PACKET -- full packet is a sodium weapon",
+        "[Optional Add-Ins]",
+        "Frozen peas, corn, or any leftover meat -- whatever's around",
+      ],
+      steps: [
+        "Cook ramen per package directions.",
+        "USE ONLY HALF the flavor packet -- the full thing is a sodium bomb.",
+        "In the last minute of cooking, crack 2 eggs directly into the broth and stir. They cook fast.",
+        "Add a splash of soy sauce and sriracha to taste.",
+        "Add any frozen veg or leftover protein if you have it.",
+      ],
+      notes: "The 2 eggs double your protein for maybe 30 cents. Half the flavor packet is still plenty salty -- the full packet will make you retain water for a week. This is the upgrade that separates people who know from people who don't.",
+    },
+    {
+      name: "Tuna Pasta",
+      subtitle: "1 serving -- ~$2.00",
+      time: "15 min",
+      macros: [{l:"Calories",v:"~480"},{l:"Protein",v:"~42g"},{l:"Fiber",v:"~2g"},{l:"Cost",v:"~$2.00"}],
+      ingredients: [
+        "2 oz dry pasta (whatever's in the pantry)",
+        "1 can chunk light tuna in water, drained",
+        "1 tbsp olive oil or butter",
+        "2 cloves garlic, minced -- or 1/2 tsp garlic powder",
+        "Salt + pepper + red pepper flakes",
+        "Squeeze of lemon if you have one",
+      ],
+      steps: [
+        "Cook pasta. Before draining, reserve a splash of pasta water.",
+        "In the same pan, heat oil or butter over medium. Add garlic, cook 1 minute.",
+        "Add drained tuna and break it up. Cook 1 more minute.",
+        "Toss in drained pasta and a splash of pasta water. Season hard with salt, pepper, and red pepper flakes.",
+        "Lemon squeeze if you have it. Eat immediately.",
+      ],
+      notes: "Pasta water is the secret -- the starch binds everything together so it doesn't taste dry. This has more protein than most restaurant meals and costs less than a candy bar.",
+    },
+    {
+      name: "Potato & Egg Scramble",
+      subtitle: "1 serving -- ~$2.25",
+      time: "15 min",
+      macros: [{l:"Calories",v:"~430"},{l:"Protein",v:"~20g"},{l:"Fiber",v:"~4g"},{l:"Cost",v:"~$2.25"}],
+      ingredients: [
+        "2 medium russet potatoes, diced small",
+        "3 eggs",
+        "1/2 onion, diced -- or 1/2 tsp onion powder",
+        "Salt + pepper + garlic powder + paprika",
+        "Hot sauce",
+      ],
+      steps: [
+        "Dice potatoes small -- smaller pieces = faster cook and better crust.",
+        "Microwave diced potatoes 4 minutes to par-cook. Skips 10 minutes of pan time.",
+        "Heat a pan over medium-high with a tiny bit of oil. Add potatoes. Let them sit undisturbed 3 minutes to crust up.",
+        "Add onion, cook 2 more minutes.",
+        "Pour eggs over everything and scramble together. Season aggressively.",
+        "Hot sauce on top.",
+      ],
+      notes: "The microwave par-cook step is the move -- skips half the cooking time and still gets you crispy potatoes. Season more than you think you need to. Potatoes eat salt.",
+    },
+    {
+      name: "Egg Fried Rice",
+      subtitle: "1 serving -- ~$1.75",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~420"},{l:"Protein",v:"~18g"},{l:"Fiber",v:"~3g"},{l:"Cost",v:"~$1.75"}],
+      ingredients: [
+        "1 cup cooked rice -- day-old works BEST, fresh gets mushy",
+        "2-3 eggs",
+        "1 tbsp soy sauce",
+        "1/2 tsp sesame oil (optional but worth it)",
+        "Frozen peas or corn -- whatever's in the freezer",
+        "Garlic powder + pepper",
+      ],
+      steps: [
+        "Get a pan screaming hot. This is not negotiable -- low heat makes soggy fried rice.",
+        "Add rice and press flat. Let sit completely undisturbed 2 minutes to crisp the bottom.",
+        "Push rice to the side. Crack eggs into the empty space, scramble them.",
+        "Mix rice and eggs together. Add frozen veg if using.",
+        "Soy sauce in, toss everything fast for 30 seconds.",
+        "Sesame oil drizzle at the very end off the heat.",
+      ],
+      notes: "Day-old rice is not optional -- fresh rice has too much moisture and steams instead of fries. If you only have fresh rice, spread it on a plate and microwave uncovered for 2 minutes to dry it out.",
+    },
+    {
+      name: "PB Banana Oatmeal",
+      subtitle: "1 serving -- ~$0.75",
+      time: "5 min",
+      macros: [{l:"Calories",v:"~380"},{l:"Protein",v:"~12g"},{l:"Fiber",v:"~6g"},{l:"Cost",v:"~$0.75"}],
+      ingredients: [
+        "1/2 cup rolled oats",
+        "1 banana, mashed",
+        "1 tbsp peanut butter or PBfit powder",
+        "Pinch of salt + cinnamon",
+        "Water or milk to cook",
+      ],
+      steps: [
+        "Mash banana directly into the dry oats before adding water -- not after.",
+        "Add water or milk, cook per package directions.",
+        "Stir in peanut butter off the heat.",
+        "Sprinkle cinnamon and salt.",
+      ],
+      notes: "Mashing the banana in BEFORE cooking is the move -- it naturally sweetens the oats from the inside and you don't need any added sugar. The salt is not optional -- it makes everything taste more like itself.",
+    },
+    {
+      name: "Scrambled Egg Tacos",
+      subtitle: "1 serving (2-3 tacos) -- ~$2.00",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~380"},{l:"Protein",v:"~20g"},{l:"Fiber",v:"~2g"},{l:"Cost",v:"~$2.00"}],
+      ingredients: [
+        "3 eggs",
+        "2-3 flour tortillas",
+        "Hot sauce + salt + pepper",
+        "[Whatever You Have]",
+        "Shredded cheese, salsa, sour cream, beans -- anything goes",
+      ],
+      steps: [
+        "Scramble eggs in a pan over medium-low heat. Cook low and slow -- they stay softer.",
+        "Warm tortillas directly over the gas burner flame 10 seconds per side -- or 20 seconds in a dry pan. This makes them pliable and slightly charred.",
+        "Fill tortillas with scrambled eggs.",
+        "Hot sauce. Whatever else you have. Fold and eat.",
+      ],
+      notes: "Warming tortillas directly on the flame is the single best upgrade you can do for free. Cold tortillas from the pack crack and taste like cardboard. 10 seconds per side on the flame changes everything.",
+    },
+    {
+      name: "Broke Lentil Soup",
+      subtitle: "2 servings -- ~$0.75 each",
+      time: "30 min",
+      macros: [{l:"Calories",v:"~360"},{l:"Protein",v:"~24g"},{l:"Fiber",v:"~16g"},{l:"Cost",v:"~$0.75"}],
+      ingredients: [
+        "1 cup dry lentils (rinsed)",
+        "3 cups water or bouillon broth",
+        "1/2 onion, diced",
+        "3 cloves garlic -- or 1 tsp garlic powder",
+        "1 tsp cumin + 1 tsp smoked paprika",
+        "Salt + pepper + red pepper flakes",
+        "Splash of vinegar or lemon juice at the end",
+      ],
+      steps: [
+        "Saute onion and garlic in a pot over medium heat 3 minutes.",
+        "Add lentils, broth, and all spices. Stir to combine.",
+        "Simmer 20-25 minutes until lentils are fully soft.",
+        "Mash about half the soup with a fork or spoon for a thicker texture.",
+        "Splash of vinegar or lemon at the very end -- brightens the whole thing.",
+        "Adjust salt and heat.",
+      ],
+      notes: "Lentils are the most protein per dollar of anything you can buy. The vinegar at the end is the secret -- it makes cheap lentil soup taste like it has more going on than it does. Don't skip it.",
+    },
+    {
+      name: "Budget Tuna Rice Bowl",
+      subtitle: "1 serving -- ~$1.75",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~420"},{l:"Protein",v:"~38g"},{l:"Fiber",v:"~1g"},{l:"Cost",v:"~$1.75"}],
+      ingredients: [
+        "1 can chunk light tuna in water, drained",
+        "1/2 cup dry rice, cooked",
+        "1 tbsp soy sauce",
+        "1 tsp sriracha",
+        "1/2 tsp sesame oil (optional)",
+        "Cucumber slices or whatever veg you have",
+      ],
+      steps: [
+        "Cook rice.",
+        "Drain tuna completely. Don't rinse -- just drain hard.",
+        "Rice in bowl. Tuna on top broken into chunks -- don't over-shred it.",
+        "Soy sauce and sriracha drizzled over. Sesame oil if you have it.",
+        "Whatever veg is around on the side.",
+      ],
+      notes: "This is basically a budget poke bowl and it tastes like one. Chunk light tuna is the cheapest high-protein food you can buy. The soy + sriracha combo does all the heavy lifting.",
+    },
+    {
+      name: "Beans on Toast",
+      subtitle: "1 serving -- ~$1.25 (no egg) / ~$1.75 (with egg)",
+      time: "5 min",
+      macros: [{l:"Calories",v:"~380"},{l:"Protein",v:"~18g"},{l:"Fiber",v:"~12g"},{l:"Cost",v:"~$1.25-$1.75"}],
+      ingredients: [
+        "1 can baked beans or any white beans",
+        "2 slices bread, toasted hard",
+        "Hot sauce + black pepper",
+        "[The Upgrade]",
+        "1 egg fried on top -- turns it into an actual meal",
+        "Shredded cheese if you have it",
+      ],
+      steps: [
+        "Heat beans in a pan over medium heat. Season with pepper and hot sauce.",
+        "Toast bread until genuinely crispy -- soft bread goes soggy immediately.",
+        "Pour beans directly over toast.",
+        "Fry an egg and put it on top if you have one.",
+        "Eat standing over the sink or sitting on the floor. Either is fine.",
+      ],
+      notes: "The British built an empire eating this. Toast must be fully crispy or it turns into a soggy mess in 30 seconds. The fried egg on top is a 25-cent upgrade that makes it a complete meal with real protein.",
+    },
+    {
+      name: "Survival Tier: Beans & Rice Week",
+      subtitle: "7 days -- ~$5.50 total -- The absolute floor",
+      time: "30 min cook once",
+      macros: [{l:"Per Meal Cal",v:"~400"},{l:"Protein",v:"~18g"},{l:"Fiber",v:"~14g"},{l:"Weekly Cost",v:"~$5.50"}],
+      ingredients: [
+        "[The Entire Shopping List]",
+        "Dry pinto or black beans, 2 lb bag -- ~$2.50 (Aldi)",
+        "Dry white rice, 2 lb bag -- ~$2.00 (Aldi)",
+        "Garlic powder + cumin + chili powder -- ~$0.75/week (amortized)",
+        "Hot sauce -- ~$0.25/week (amortized)",
+        "[What You Get]",
+        "2 lbs dry beans = 10-12 servings",
+        "2 lbs dry rice = 14-16 servings",
+        "3 meals a day for 7 days with food left over",
+      ],
+      steps: [
+        "BEANS: Rinse dry beans thoroughly. Add to a large pot, cover with water by 2 inches. Bring to a boil, then simmer 60-90 minutes until completely soft. Season with cumin, garlic powder, chili powder, and salt.",
+        "RICE: Cook rice per package directions. Season with garlic powder and salt.",
+        "Cook both in large batches on Sunday. Refrigerate in separate containers.",
+        "Each meal: scoop rice into a bowl, spoon beans over the top, hit with hot sauce.",
+        "Reheat in the microwave 90 seconds. Eat. Repeat.",
+      ],
+      notes: "This is the floor. $5.50 a week. Rice and beans together form a complete protein -- all essential amino acids are covered. Humans have survived on this combination for thousands of years across basically every culture on earth simultaneously. It is not optimal but it is not nothing. Hot sauce is not optional -- it is what makes this survivable.",
+    },
+    {
+      name: "Survival Tier: Chicken, Rice & Bean Week",
+      subtitle: "7 days -- ~$12.35 total -- Broke but eating well",
+      time: "30 min cook once",
+      macros: [{l:"Per Meal Cal",v:"~480"},{l:"Protein",v:"~42g"},{l:"Fiber",v:"~12g"},{l:"Weekly Cost",v:"~$12.35"}],
+      ingredients: [
+        "[The Entire Shopping List]",
+        "Dry pinto or black beans, 2 lb -- ~$2.50 (Aldi)",
+        "Dry white rice, 2 lb -- ~$2.00 (Aldi)",
+        "Chicken breast, 2 lbs -- ~$5.00 (Aldi)",
+        "Casa Mamita salsa, 16 oz jar -- ~$1.85 (Aldi)",
+        "Garlic powder + cumin + chili powder -- ~$0.75/week (amortized)",
+        "Hot sauce -- ~$0.25/week (amortized)",
+        "[The Upgrade: Add a Dozen Eggs]",
+        "1 dozen eggs -- ~$6.00 = breakfast covered, total bumps to ~$18.35",
+      ],
+      steps: [
+        "BEANS: Rinse dry beans. Cover with water by 2 inches in a large pot. Boil then simmer 60-90 minutes until soft. Season with cumin, garlic powder, chili powder, salt.",
+        "RICE: Cook rice per package directions. Season with garlic powder and salt.",
+        "SALSA CHICKEN: Season chicken breasts with cumin, garlic powder, chili powder. Cook in a pan over medium heat 5-6 minutes per side until cooked through. Pour salsa over the top, reduce heat, cook 2 more minutes. Shred with two forks.",
+        "Portion everything into containers. Refrigerate.",
+        "Each meal: rice base, beans alongside, shredded salsa chicken on top. Hot sauce. Done.",
+        "ROTATION: Eat as a bowl one day, wrap it in a tortilla the next if you have them. Same ingredients, different format -- breaks the monotony.",
+      ],
+      notes: "Going from $5.50 to $12.35 a week gets you from surviving to actually eating well. The salsa does all the flavor work -- no real cooking skill required. Add a dozen eggs for ~$6 more and breakfast is covered too at ~$18.35 total for the week. That is less than a single fast food combo meal per day.",
+    },
+  ],
 };
 
-// ── RENDER ──────────────────────────────────────────────────
-let currentSection = 'batch';
-let currentRecipeIndex = null;
+// ── RENDER
 
 function renderGrid(section) {
   const grid = document.getElementById(`grid-${section}`);
