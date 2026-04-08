@@ -606,7 +606,7 @@
     <button class="tab-btn" onclick="switchTab('breakfast')">Breakfast</button>
     <button class="tab-btn" onclick="switchTab('snacks')">Snacks</button>
     <button class="tab-btn" onclick="switchTab('dessert')">Dessert</button>
-    <button class="tab-btn" onclick="switchTab('struggle')">Struggle Meals</button>
+    <button class="tab-btn" onclick="switchTab('struggle')">High Protein for Broke Bitches</button>
   </div>
 
   <!-- PANEL -->
@@ -695,7 +695,7 @@
       <div class="recipe-list-view" id="list-struggle">
         <div class="section-header">
           <div class="section-label">✦ Section Seven ✦</div>
-          <div class="section-title">Struggle Meals</div>
+          <div class="section-title">High Protein for Broke Bitches</div>
           <div class="section-desc">Three tiers. $0.75 to $3 per meal. A complete budget eating system.</div>
         </div>
         <div class="recipe-grid" id="grid-struggle"></div>
@@ -1796,6 +1796,12 @@ const RECIPES = {
     },
   ],
   struggle: [
+    // ── INTRO ──
+    {
+      type: 'info',
+      name: '✦ Why This Section Exists',
+      body: `This section exists because I've been there. Bills, debt, an empty fridge, and a paycheck that won't hit for four days. The recipes in here aren't fancy — they're food that fills you up, hits real protein numbers, and costs less than a vending machine snack. Three tiers, from $0.75 to $3 per meal, all built around the same handful of pantry staples. Buy them once. Eat all month. No shame in any of it.`,
+    },
     // ── PANTRY STAPLES INFO CARD ──
     {
       type: 'info',
@@ -1986,9 +1992,9 @@ const RECIPES = {
     },
     {
       name: "Frozen Vegetable Rice Bowl",
-      subtitle: "1 serving -- ~$1.25",
+      subtitle: "1 serving -- ~$1.75 with egg / ~$2.00 with tuna",
       time: "10 min",
-      macros: [{l:"Calories",v:"~380"},{l:"Protein",v:"~8g"},{l:"Fiber",v:"~8g"},{l:"Cost",v:"~$1.25"}],
+      macros: [{l:"Calories",v:"~460"},{l:"Protein",v:"~20g"},{l:"Fiber",v:"~8g"},{l:"Cost",v:"~$1.75"}],
       ingredients: [
         "1/2 cup dry rice, cooked",
         "1 bag frozen mixed vegetables (~12 oz)",
@@ -1996,19 +2002,20 @@ const RECIPES = {
         "1/2 tsp garlic powder",
         "1/2 tsp sesame oil (optional)",
         "Hot sauce",
-        "[Protein Upgrades -- Add Any]",
-        "1 fried egg on top (+$0.50)",
-        "1/2 can tuna mixed in (+$0.75)",
-        "Leftover chicken from batch prep",
+        "[Pick Your Protein -- Required, Not Optional]",
+        "1-2 fried eggs on top (~$0.50 -- easiest option)",
+        "1/2 can tuna mixed in (~$0.50 -- highest protein)",
+        "Leftover chicken from batch prep (free if you have it)",
       ],
       steps: [
         "Cook rice per package directions.",
         "Microwave frozen veg per bag directions. Drain any excess water.",
         "Toss veg with soy sauce, garlic powder, and sesame oil while hot.",
-        "Rice in bowl, veg on top, hot sauce to finish.",
-        "Add any protein upgrade if you have one.",
+        "Rice in bowl, veg on top.",
+        "Add your protein -- fry an egg and put it on top, or mix in half a can of tuna.",
+        "Hot sauce to finish.",
       ],
-      notes: "Base bowl is low protein at 8g -- this is a volume and fiber meal, not a protein meal. Always add a protein upgrade when you can afford it. A single egg on top takes it to ~14g for 50 cents. Half a can of tuna takes it to ~28g for 75 cents.",
+      notes: "This bowl without protein is just a side dish at 8g. Always add the egg or tuna -- it takes 2 extra minutes and the difference is 12-30g more protein. Egg = ~20g total for $1.75. Tuna = ~28g total for $2.00. Leftover batch chicken = ~50g total for basically free.",
     },
     {
       name: "Cottage Cheese Pasta",
