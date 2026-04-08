@@ -2203,11 +2203,205 @@ const RECIPES = {
       ],
       notes: "Going from $5.50 to $12.35 a week gets you from surviving to actually eating well. The salsa does all the flavor work -- no real cooking skill required. Add a dozen eggs for ~$6 more and breakfast is covered too at ~$18.35 total for the week. That is less than a single fast food combo meal per day.",
     },
+
+    // ── TUNA & RICE SUBSECTION ──
+    { type: 'divider', name: 'The Tuna & Rice System', subtitle: '20-pack tuna + 20 lb rice bag = 40+ meals under $1 each' },
+    {
+      type: 'info',
+      name: '✦ The Tuna & Rice System — Best Protein-Per-Dollar in the Section',
+      body: `
+        <strong>Sam's Club 20-pack chunk light tuna:</strong> ~$16-18. That's ~$0.85 per can.<br>
+        <strong>Sam's Club 20 lb rice bag:</strong> ~$12. That's ~$0.08 per serving.<br>
+        <strong>Base cost per meal (1 can + ½ cup dry rice):</strong> ~$0.93 before any flavoring.<br>
+        <strong>Flavoring adds:</strong> $0.05–0.25 depending on what you use.<br><br>
+        Not the absolute cheapest system in this book — beans and rice at $5.50/week still wins that. But tuna and rice hits 38-46g protein per meal at under $1.20, which beans alone can't touch. This is the move when you need protein and variety without spending more than a dollar a meal.<br><br>
+        Same two ingredients. Eight completely different meals. Drain the tuna hard every time. Acid always helps. Bold seasoning always required.
+      `,
+    },
+    {
+      name: "Japanese Tuna Rice Bowl",
+      subtitle: "1 serving -- ~$1.10 -- Budget poke",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~420"},{l:"Protein",v:"~40g"},{l:"Fiber",v:"~1g"},{l:"Cost",v:"~$1.10"}],
+      ingredients: [
+        "1 can chunk light tuna, drained hard",
+        "1/2 cup dry rice, cooked",
+        "1 tbsp soy sauce",
+        "1 tsp sesame oil",
+        "1 tsp rice vinegar",
+        "1 tsp sriracha",
+        "Optional: cucumber slices, scallion, sesame seeds",
+      ],
+      steps: [
+        "Cook rice. Drain tuna completely -- press it dry.",
+        "Mix soy sauce, sesame oil, rice vinegar, and sriracha together.",
+        "Toss tuna in the sauce until fully coated.",
+        "Rice in bowl, dressed tuna on top. Whatever toppings you have.",
+      ],
+      notes: "This is the budget poke bowl. The rice vinegar is what makes it taste like more than just tuna and soy sauce -- don't skip it. Sesame oil in the sauce only, never use it to cook -- it burns.",
+    },
+    {
+      name: "Mediterranean Tuna Rice",
+      subtitle: "1 serving -- ~$1.20",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~440"},{l:"Protein",v:"~38g"},{l:"Fiber",v:"~2g"},{l:"Cost",v:"~$1.20"}],
+      ingredients: [
+        "1 can chunk light tuna, drained hard",
+        "1/2 cup dry rice, cooked",
+        "1 tbsp olive oil or neutral oil",
+        "Juice of 1/4 lemon",
+        "1/4 tsp dried oregano",
+        "Pinch of red pepper flakes",
+        "Optional: sliced red onion, capers, olives",
+      ],
+      steps: [
+        "Cook rice. Drain tuna completely.",
+        "Drizzle oil and lemon juice over tuna. Add oregano and red pepper flakes.",
+        "Toss gently -- don't shred it into paste, keep some chunk.",
+        "Rice in bowl, tuna on top. Red onion and capers if you have them.",
+      ],
+      notes: "The lemon is doing heavy lifting here -- squeeze it over right before eating not before. Oil carries the oregano into the fish. Keeps well in the fridge if you hold the lemon until serving.",
+    },
+    {
+      name: "Tex-Mex Tuna Rice Bowl",
+      subtitle: "1 serving -- ~$1.10",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~420"},{l:"Protein",v:"~40g"},{l:"Fiber",v:"~3g"},{l:"Cost",v:"~$1.10"}],
+      ingredients: [
+        "1 can chunk light tuna, drained hard",
+        "1/2 cup dry rice, cooked",
+        "1/2 tsp cumin",
+        "1/2 tsp chili powder",
+        "Squeeze of lime",
+        "2 tbsp salsa or hot sauce",
+        "Optional: black beans, corn, pickled jalapenos",
+      ],
+      steps: [
+        "Cook rice. Drain tuna hard.",
+        "Toss tuna with cumin, chili powder, lime juice, and salsa.",
+        "Rice in bowl, seasoned tuna on top. Hot sauce.",
+        "Add beans and corn if you have them -- turns it into a full burrito bowl.",
+      ],
+      notes: "Cumin is the move here -- it removes the fishy edge and makes the tuna read as a taco protein instead. Lime juice at the end, not mixed in early or it starts to chemically 'cook' the tuna and changes the texture.",
+    },
+    {
+      name: "Curry Tuna Rice Bowl",
+      subtitle: "1 serving -- ~$1.15 -- Serve cold",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~430"},{l:"Protein",v:"~42g"},{l:"Fiber",v:"~1g"},{l:"Cost",v:"~$1.15"}],
+      ingredients: [
+        "1 can chunk light tuna, drained hard",
+        "1/2 cup dry rice, cooked and cooled",
+        "2 tbsp Friendly Farms plain Greek yogurt",
+        "1/2 tsp curry powder",
+        "Squeeze of lime",
+        "Pinch of salt",
+        "Optional: raisins, cilantro, cucumber",
+      ],
+      steps: [
+        "Cook rice and let it cool -- this one is served cold or room temp.",
+        "Drain tuna completely.",
+        "Mix Greek yogurt, curry powder, lime juice, and salt together.",
+        "Fold tuna into the curry yogurt sauce gently.",
+        "Serve over cooled rice.",
+      ],
+      notes: "Sounds weird. Genuinely good. The yogurt cuts the fishiness better than mayo and adds protein. Served cold makes it feel completely different from the other bowls -- good for a packed lunch situation.",
+    },
+    {
+      name: "Miso Tuna Rice Bowl",
+      subtitle: "1 serving -- ~$1.20",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~415"},{l:"Protein",v:"~40g"},{l:"Fiber",v:"~1g"},{l:"Cost",v:"~$1.20"}],
+      ingredients: [
+        "1 can chunk light tuna, drained hard",
+        "1/2 cup dry rice, cooked",
+        "1 tsp miso paste (white or yellow)",
+        "1 tsp soy sauce",
+        "1/2 tsp sesame oil",
+        "1/2 tsp rice vinegar",
+        "1 tbsp warm water (to thin the miso)",
+        "Optional: scallion, ginger, sesame seeds",
+      ],
+      steps: [
+        "Cook rice. Drain tuna completely.",
+        "Dissolve miso paste in warm water. Add soy sauce, sesame oil, and rice vinegar.",
+        "Toss tuna in miso sauce until coated.",
+        "Rice in bowl, miso tuna on top. Scallion if you have it.",
+      ],
+      notes: "Miso is the deepest umami hit in this whole system -- it makes the tuna taste nothing like canned tuna. A small tub of miso paste costs ~$3-4 and lasts months in the fridge. Worth buying once.",
+    },
+    {
+      name: "Classic Tuna Salad Rice Bowl",
+      subtitle: "1 serving -- ~$1.15 -- American comfort",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~440"},{l:"Protein",v:"~40g"},{l:"Fiber",v:"~1g"},{l:"Cost",v:"~$1.15"}],
+      ingredients: [
+        "1 can chunk light tuna, drained hard",
+        "1/2 cup dry rice, cooked",
+        "1 tbsp mayo or Greek yogurt (Greek yogurt = higher protein, lower cal)",
+        "1 tsp yellow mustard",
+        "1 tsp pickle relish or diced dill pickle",
+        "Pinch of celery salt or onion powder",
+        "Cracked black pepper",
+      ],
+      steps: [
+        "Cook rice. Drain tuna hard.",
+        "Mix mayo or yogurt, mustard, relish, celery salt, and pepper.",
+        "Fold tuna into the dressing.",
+        "Serve cold over rice -- or warm the rice and put the cold tuna salad on top.",
+      ],
+      notes: "Classic tuna salad over rice instead of bread saves calories and adds fiber. Greek yogurt instead of mayo cuts fat and adds ~5g protein per serving. Cold tuna over hot rice is actually a great textural contrast.",
+    },
+    {
+      name: "Italian Tuna & White Bean Rice",
+      subtitle: "1 serving -- ~$1.85 -- Most filling of the eight",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~520"},{l:"Protein",v:"~46g"},{l:"Fiber",v:"~10g"},{l:"Cost",v:"~$1.85"}],
+      ingredients: [
+        "1 can chunk light tuna, drained hard",
+        "1/2 cup dry rice, cooked",
+        "1/2 can white beans (Great Northern or cannellini), drained",
+        "1 tbsp olive oil",
+        "Juice of 1/4 lemon",
+        "1/4 tsp dried oregano + pinch of red pepper flakes",
+        "Salt + cracked black pepper",
+        "Optional: sun-dried tomatoes, red onion",
+      ],
+      steps: [
+        "Cook rice. Drain tuna completely.",
+        "Toss white beans with olive oil, lemon juice, oregano, red pepper flakes, salt, and pepper.",
+        "Add tuna and fold together gently -- keep some texture.",
+        "Serve over rice. Sun-dried tomatoes on top if you have them.",
+      ],
+      notes: "Most expensive of the eight at ~$1.85 but also the most filling -- the white beans add 10g fiber and push it closer to a full restaurant-style meal. The extra half can of beans is what makes this one.",
+    },
+    {
+      name: "Nooch Caesar Tuna Rice",
+      subtitle: "1 serving -- ~$1.20 -- Parmesan vibes for free",
+      time: "10 min",
+      macros: [{l:"Calories",v:"~430"},{l:"Protein",v:"~44g"},{l:"Fiber",v:"~1g"},{l:"Cost",v:"~$1.20"}],
+      ingredients: [
+        "1 can chunk light tuna, drained hard",
+        "1/2 cup dry rice, cooked",
+        "3 tbsp nutritional yeast",
+        "1 tbsp mayo or Greek yogurt",
+        "Juice of 1/4 lemon",
+        "1/2 tsp garlic powder",
+        "1/2 tsp Worcestershire sauce",
+        "Salt + cracked black pepper",
+      ],
+      steps: [
+        "Cook rice. Drain tuna hard.",
+        "Mix nutritional yeast, mayo or yogurt, lemon juice, garlic powder, Worcestershire, salt, and pepper into a thick sauce.",
+        "Toss tuna in the sauce until coated.",
+        "Rice in bowl, nooch caesar tuna on top. Extra nutritional yeast on top like parmesan.",
+      ],
+      notes: "Nutritional yeast + lemon + garlic + Worcestershire is a stripped-down Caesar dressing with no anchovy needed -- the tuna provides that same umami hit. Tastes like a Caesar salad without the lettuce or croutons.",
+    },
   ],
 };
 
 // ── RENDER
-
 function renderGrid(section) {
   const grid = document.getElementById(`grid-${section}`);
   const recipes = RECIPES[section];
